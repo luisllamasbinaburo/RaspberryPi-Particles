@@ -23,15 +23,15 @@ namespace Rpi_Particles
         public List<ParticleForceBase> Forces = new List<ParticleForceBase>();
         public List<ParticleColliderBase> Colliders = new List<ParticleColliderBase>();
 
-        public void Update()
+        public void Update(float deltaT)
         {
             foreach (var source in Sources)
             {
-                source.Create();
+                source.Create(deltaT);
 
                 foreach (var particle in source.Particles.ToArray())
                 {
-                    particle.Update();
+                    particle.Update(deltaT);
 
                     if (particle.LifeTime > particle.Longevity)
                     {

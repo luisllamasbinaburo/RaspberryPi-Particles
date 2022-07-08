@@ -26,7 +26,7 @@ namespace Rpi_Particles
 
         public override void CreateParticle()
         {
-            float speed = (float)(new Random().NextDouble()) * 0.5f * 8.0f;
+            float speed = (float)(new Random().NextDouble()) * (LifeSpeedMax  - LifeSpeedMin) - LifeSpeedMin;
             float angle = (float)(new Random().NextDouble()) * 2 * MathF.PI;
 
             Particles.Add(new Particle()
@@ -38,8 +38,8 @@ namespace Rpi_Particles
                 ElasticLoss = this.ElasticLoss,
                 ViscoseLoss = this.ViscoseLoss,
 
-                Longevity = 20f,
-                LifeSpeed = 0.1f,
+                Longevity = 5f,
+                LifeSpeed = 1f,
             });
 
 

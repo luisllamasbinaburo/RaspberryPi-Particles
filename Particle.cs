@@ -30,20 +30,20 @@ public class Particle
         return MathF.Sqrt(Speed.X * Speed.X + Speed.Y * Speed.Y);
     }
 
-    public void Update()
+    public void Update(float deltaT)
     {
         LastPosition.X = Position.X;
         LastPosition.Y = Position.Y;
 
-        Speed.X -= Acceleration.X;
-        Speed.Y -= Acceleration.Y;
+        Speed.X -= Acceleration.X * deltaT;
+        Speed.Y -= Acceleration.Y * deltaT;
 
-        Position.X += Speed.X;
-        Position.Y += Speed.Y;
+        Position.X += Speed.X * deltaT;
+        Position.Y += Speed.Y * deltaT;
+
+        LifeTime += LifeSpeed * deltaT;
 
         Acceleration.X = 0;
         Acceleration.Y = 0;
-
-        LifeTime += LifeSpeed;
     }
 };

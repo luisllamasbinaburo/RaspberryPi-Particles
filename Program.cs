@@ -14,7 +14,8 @@ namespace Rpi_Faces
         public static void Main(string[] args)
         {
             //Example1.Run();
-            Example2.Run();
+            //Example2.Run();
+            Benchmark.Run();
         }        
     }
 }

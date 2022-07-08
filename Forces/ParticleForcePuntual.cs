@@ -10,7 +10,7 @@ namespace Rpi_Particles
         {
         }
 
-        public ParticleForcePuntual(float x, float y, float force) : base(force)
+        public ParticleForcePuntual(float force, float x, float y) : base(force)
         {
             Origin = new Vector2(x, y);
         }

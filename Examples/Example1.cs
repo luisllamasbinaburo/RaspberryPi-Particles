@@ -46,7 +46,7 @@ namespace Rpi_Faces
                 var x = animation.Calculate(GetTime());
                 source.Origin = new System.Numerics.Vector2((int)(x * 200 - 100 + 240), 100);
 
-                field.Update();
+                field.Update((float)GetFrameTime());
                 foreach (var particle in field.Sources.SelectMany(x => x.Particles))
                 {
                     DrawTexture(texture.texture, (int)particle.Position.X, (int)particle.Position.Y, GetColor(particle));
